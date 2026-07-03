@@ -48,7 +48,7 @@ netsh int ipv4 set gl loopbacklargemtu=disable
 </details>
 
 ### 4. Verify the bug is fixed
-Download the bbr2_repro.py file; this requires Python installed on your system.
+Download the [bbr2_repro.py file](https://github.com/sentinelb51/win-bbr/blob/main/bbr2_repro.py); this requires Python installed on your system.
 
 #### CMD
 ```ps1
