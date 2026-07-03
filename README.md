@@ -14,7 +14,7 @@ Step-by-step guide on how to enable BRRv2 the right way.
 
 ### 1. Check what congestion provider is used
 #### CMD
-```ps1
+```console
 netsh int tcp show supplemental
 ```
 <details>
@@ -25,7 +25,7 @@ netsh int tcp show supplemental
 ### 2. Set congestion provider to BBR2
 Available values are: `none`, `ctcp`, `dctcp`, `cubic`, `bbr2`, `default` 
 #### CMD
-```ps1
+```console
 netsh int tcp set supplemental template=internet congestionprovider=bbr2
 ```
 
@@ -36,7 +36,7 @@ netsh int tcp set supplemental template=internet congestionprovider=bbr2
 
 ### 3. Disable large loopback MTU
 #### CMD
-```ps1
+```console
 netsh int ipv4 set gl loopbacklargemtu=disable
 ```
 
@@ -51,7 +51,7 @@ netsh int ipv4 set gl loopbacklargemtu=disable
 Download the [bbr2_repro.py file](https://github.com/sentinelb51/win-bbr/blob/main/bbr2_repro.py); this requires Python installed on your system.
 
 #### CMD
-```ps1
+```console
 python bbr2_repro.py
 ```
 
@@ -95,7 +95,7 @@ If disabling large loopback MTU is not an option, there are 2 options that will 
 
 #### Option 1 (global)
 A compromise fix is to disable TCP receive-window auto-tuning:
-```ps1
+```console
 netsh int tcp set gl autotuninglevel=disable
 ```
 
